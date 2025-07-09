@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a work-in-progress personal website in the spirit of Web 1.5. It will consist of links, a webring, select personal information, links to projects, and small journal entries.
+This is a work-in-progress personal website in the spirit of [Web 1.5](https://cjthex.com/what-is-to-be-done/). It will consist of links, a webring, select personal information, links to projects, and small journal entries.
 
 ## View site
 
