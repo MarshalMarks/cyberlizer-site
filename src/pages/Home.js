@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 function Home() {
+    const navigate = useNavigate();
+
     return (
         <>
             <div id="home-grid">
@@ -28,10 +32,12 @@ function Home() {
                 <div id="journal-section" class="box-section">
                     <h2>Journal</h2>
                     <p>(Under construction)</p>
+                    <button onClick={() => { navigate("/journal") }}>See all entries</button>
                 </div>
                 <div id="projects-section" class="box-section">
                     <h2>Projects</h2>
                     <p>(Under construction)</p>
+                    <button onClick={() => { navigate("/projects") }}>See all projects</button>
                 </div>
             </div>
         </>
