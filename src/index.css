@@ -6,8 +6,8 @@ body {
   font-family: "Urbanist", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #d3b9b9;
-  background-image: radial-gradient(#df3b3b 2px, transparent 0);
+  background: #fff6f6;
+  background-image: radial-gradient(#ff4343 2px, transparent 0);
   background-size: 10px 10px;
   animation-name: moveBackground;
   animation-duration: 4s;
