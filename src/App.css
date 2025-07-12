@@ -1,38 +1,111 @@
 .App {
+  text-align: left;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  scrollbar-color: #000 #00000000;
+  scrollbar-width: thin;
+}
+
+h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  width: 100%;
+  font-size: calc(0.5vw + 14px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  font-size: 22px;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  background-image: url("/src/resources/redwedge.png");
+  background-repeat: no-repeat;
+  background-position: bottom 0px left -200px;
+  border-bottom: 2px dashed #000;
+  padding: 0.7rem;
+  padding-left: 1rem;
+  transition: 0.1s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a:hover {
+  background-position: bottom 0px left -130px;
+  border-bottom: 2px solid #000;
+  padding-left: 3rem;
+  transition: 0.2s;
+}
+
+.box-section {
+  padding: 1.4rem;
+  border: 3px solid #000;
+  background-color: #e7e7e7;
+  box-shadow: 5px 5px 0px 0px #000;
+  transition: 0.5s;
+}
+
+.box-section:hover {
+  background-color: #fff;
+  box-shadow: 9px 9px 0px 0px #000;
+  transition: 0.3s;
+}
+
+#home-grid {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 13rem 6fr 6fr;
+  grid-template-rows: 13rem 1fr 3fr;
+  height: 90vh;
+  padding-left: max(calc(35vw - 20rem), 2.5rem);
+  padding-right: max(calc(35vw - 20rem), 2.5rem);
+}
+
+#pfp {
+  width: calc(11.6rem - 6px);
+  height: auto;
+  border: 3px solid #000;
+}
+
+#about-section {
+  grid-row: 1/3;
+  grid-column: 2/4;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#about-section h2 {
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#about-text-container {
+  overflow-y: auto;
+  padding-right: 1.4rem;
+}
+
+#links-section {
+  grid-row: 2/5;
+  grid-column: 1;
+  padding-left: 0;
+  padding-right: 0;
+  overflow-y: scroll;
+}
+
+#friends-header {
+  margin-top: 2.4rem;
+}
+
+#image-section {
+  grid-row: 1;
+  grid-column: 1;
+  padding: 0.5rem;
+}
+
+#journal-section {
+  grid-row: 3/5;
+  grid-column: 2;
+}
+
+#projects-section {
+  grid-row: 3/5;
+  grid-column: 3;
 }

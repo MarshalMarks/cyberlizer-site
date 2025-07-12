@@ -1,27 +1,39 @@
 function Home() {
     return (
         <>
-            <h1>The Cyberden</h1>
-            <div id="about-section">
-                <h3>About Me</h3>
-                <p>Hi! My name is Clay Marks.</p>
+            <div id="home-grid">
+                <div id="image-section" class="box-section">
+                    <img src="https://cdn.bsky.app/img/avatar/plain/did:plc:psca2btmhyqh5cpnjs4rszpa/bafkreiaglwtblswey2bvld4gtipflv6hm5oe5voyal4cqxfjjnzrjytsmy@jpeg" alt="Red wedge piercing an outline of Texas" id="pfp" />
+                </div>
+                <div id="about-section" class="box-section">
+                    <h2>About Me</h2>
+                    <div id="about-text-container">
+                        <p>Hi! My name is <b>Clay Marks</b>.</p>
+                        <p>I'm a 22-year-old programmer from Texas trying to orient myself in a mercurial world.</p>
+                        <p>I love electronic music (Aphex Twin, Porter Robinson, underscores, Iglooghost) and automation/puzzle games (Minecraft Create, Oxygen Not Included, Factorio, Zachtronics games, Portal).</p>
+                    </div>
+                </div>
+                <div id="links-section" class="box-section">
+                    <h2>Links</h2>
+                    <a href="https://bsky.app/profile/cyberlizer.net?utm_source=cyberlizer.net" target="_blank" rel="noreferrer noopener">Bluesky</a>
+                    <a href="https://github.com/MarshalMarks?utm_source=cyberlizer.net" target="_blank" rel="noreferrer noopener">GitHub</a>
+                    <a href="mailto:marshmarks@gmail.com">Email</a>
+                    <a href="https://talk.opn.haus/memberlist.php?mode=viewprofile&u=64&utm_source=cyberlizer.net" target="_blank" rel="noreferrer noopener">Open House*</a>
+                    <h2 id="friends-header">Cool people</h2>
+                    <a href="https://geminiworkshops.neocities.org/?utm_source=cyberlizer.net" target="_blank" rel="noreferrer noopener">Milo</a>
+                    <a href="https://mmatt.net/?utm_source=cyberlizer.net" target="_blank" rel="noreferrer noopener">Matt</a>
+                    <a href="https://www.aprils.garden/?utm_source=cyberlizer.net" target="_blank" rel="noreferrer noopener">April</a>
+                    <a href="https://opn.haus/gb?utm_source=cyberlizer.net" target="_blank" rel="noreferrer noopener">Wyhatt</a>
+                </div>
+                <div id="journal-section" class="box-section">
+                    <h2>Journal</h2>
+                    <p>(Under construction)</p>
+                </div>
+                <div id="projects-section" class="box-section">
+                    <h2>Projects</h2>
+                    <p>(Under construction)</p>
+                </div>
             </div>
-            <div id="links-section">
-                <p><a href="https://bsky.app/profile/cyberlizer.net?utm_source=cyberlizer.net" rel="noopener">Bluesky</a></p>
-                <p><a href="https://github.com/MarshalMarks?utm_source=cyberlizer.net" rel="noopener">GitHub</a></p>
-                <p><a href="mailto:marshmarks@gmail.com">Email</a></p>
-                <p><a href="https://talk.opn.haus/memberlist.php?mode=viewprofile&u=64&utm_source=cyberlizer.net" rel="noopener">Open House* Forum</a></p>
-            </div>
-            <div id="friends">
-                <h3>Cool people</h3>
-                <p><a href="https://geminiworkshops.neocities.org/?utm_source=cyberlizer.net" rel="noopener">Milo</a></p>
-                <p><a href="https://mmatt.net/?utm_source=cyberlizer.net" rel="noopener">Matt</a></p>
-                <p><a href="https://www.aprils.garden/?utm_source=cyberlizer.net" rel="noopener">April</a></p>
-                <p><a href="https://opn.haus/gb?utm_source=cyberlizer.net" rel="noopener">Wyhatt</a></p>
-            </div>
-            <h3><a href="/journal">Journal</a></h3>
-            <h3><a href="/projects">Projects</a></h3>
-            
         </>
     );
 }
