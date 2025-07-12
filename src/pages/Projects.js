@@ -1,7 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 function Projects() {
+    const navigate = useNavigate();
+
     return (
         <>
-            <h1>Projects</h1>
+            <button class="home-button" onClick={() => {navigate("/")}}>Return home</button>
+            <div class="grid">
+                <div id="journal-page-section" class="box-section">
+                    <h1>Projects</h1>
+                </div>
+            </div>
         </>
     );
 }

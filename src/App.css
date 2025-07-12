@@ -43,6 +43,7 @@ button {
   border-radius: 0.5rem;
   background-color: #ffffff;
   box-shadow: 3px 3px 0px 0px #000;
+  font-weight: bold;
   font-size: 1.4rem;
   font-family: "Urbanist", sans-serif;
   background-image: url("/src/resources/redwedge.png");
@@ -81,6 +82,22 @@ button:hover {
   height: 90vh;
   padding-left: max(calc(35vw - 20rem), 2.5rem);
   padding-right: max(calc(35vw - 20rem), 2.5rem);
+}
+
+.grid {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 90vh;
+  padding-left: max(calc(35vw - 20rem), 2.5rem);
+  padding-right: max(calc(35vw - 20rem), 2.5rem);
+}
+
+.home-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 #pfp {
