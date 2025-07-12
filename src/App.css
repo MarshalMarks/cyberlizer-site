@@ -87,7 +87,7 @@ a:hover {
   grid-column: 1;
   padding-left: 0;
   padding-right: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #friends-header {
