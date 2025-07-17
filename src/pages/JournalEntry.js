@@ -1,5 +1,4 @@
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -19,7 +18,7 @@ function JournalEntry() {
         };
 
         fetchMarkdown();
-    }, [id])
+    }, [id, markdownContext])
 
     const entryInfo = {
         readTime: "15 minutes",
