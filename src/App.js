@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Routes>
           <Route path="/" element={<Home entries={entries} />} />
           <Route path="/journal" element={<Journal entries={entries} />} />
