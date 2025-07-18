@@ -4,6 +4,13 @@
   padding-bottom: 5vh;
   scrollbar-color: #000 #00000000;
   scrollbar-width: thin;
+  background: #fff6f6;
+  background-image: radial-gradient(#ee0000 2px, transparent 0);
+  background-size: 10px 10px;
+  animation-name: moveBackground;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 h1, h2 {

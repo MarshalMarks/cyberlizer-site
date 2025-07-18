@@ -6,13 +6,7 @@ body {
   font-family: "Urbanist", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #ee0000;
-  background-image: radial-gradient(#fff6f6 5px, transparent 0);
-  background-size: 10px 10px;
-  animation-name: moveBackground;
-  animation-duration: 4s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  background: #fff6f6;
 }
 
 @keyframes moveBackground {
