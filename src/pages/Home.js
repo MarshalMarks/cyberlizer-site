@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import MiniJournalLink from "../components/MiniJournalLink";
 
-function Home() {
+function Home({ entries }) {
     const navigate = useNavigate();
 
     return (
@@ -31,7 +32,11 @@ function Home() {
                 </div>
                 <div id="journal-section" class="box-section">
                     <h2>Journal</h2>
-                    <p>(Under construction)</p>
+                    <div id="mini-journal-container">
+                        {!entries ? <h2>Loading...</h2> : entries.map(entry => (
+                            <MiniJournalLink key={entry.cid} rkey={entry.uri.split("/")[4]} entry={entry}/>
+                        ))}
+                    </div>
                     <button onClick={() => { navigate("/journal") }}>See all entries</button>
                 </div>
                 <div id="projects-section" class="box-section">

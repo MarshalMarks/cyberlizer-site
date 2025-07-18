@@ -103,7 +103,7 @@ img {
   padding-right: max(calc(35vw - 20rem), 2.5rem);
 }
 
-.home-button {
+.back-button {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -159,6 +159,47 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+#mini-journal-container {
+  background-color: #bbb;
+  height: 100%;
+  margin-bottom: 1.4rem;
+  border-radius: 0.5rem;
+  border: #000 2px solid;
+  overflow-y: auto;
+}
+
+#mini-journal-container h2 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+#mini-journal-container h4 {
+  margin-top: 0;
+}
+
+.mini-journal-link {
+  background: #fff;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  border-bottom: 2px dashed #000;
+  background-image: url("/src/resources/redwedge.png");
+  background-repeat: no-repeat;
+  background-position: bottom 0px left -200px;
+  transition: 0.1s;
+}
+
+.mini-journal-link h2 {
+  text-align: left;
+}
+
+.mini-journal-link:hover {
+  background-color: #eee;
+  border-bottom: 2px solid #000;
+  background-position: bottom 0px left -110px;
+  padding-left: 3rem;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 #projects-section {
@@ -244,7 +285,7 @@ img {
 }
 
 #entry-header * {
-  text-align: left;
+  text-align: center;
   margin-bottom: 1rem;
   margin-top: 0;
 }
@@ -261,14 +302,14 @@ img {
 
 #entry-header p {
   font-size: 1.1rem;
-  font-style: italic;
+  margin-bottom: 0.7rem;
   color: #555;
 }
 
 #entry-header {
   padding-top: 2rem;
-  padding-bottom: 0.5rem;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
   border-bottom: 2px solid #000;
 }
 
@@ -294,4 +335,18 @@ img {
 
 #markdown-section hr {
   border: 1px #aaa solid;
+}
+
+.whitewind-link {
+  border-radius: 0.5rem;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0px 0px #000;
+  font-weight: bold;
+  margin-top: 3rem;
+}
+
+.whitewind-link:hover {
+  background-color: #fff;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0px 0px #000;
 }
