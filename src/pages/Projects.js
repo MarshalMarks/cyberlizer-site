@@ -1,11 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 function Projects() {
-    const navigate = useNavigate();
-
     return (
         <>
-            <button class="home-button" onClick={() => {navigate("/")}}>Return home</button>
+            <BackButton />
             <div class="grid">
                 <div id="journal-page-section" class="box-section">
                     <h1>Projects</h1>
