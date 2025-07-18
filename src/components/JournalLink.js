@@ -1,17 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
-function JournaLink({ props }) {
+function JournaLink({ rkey, entry }) {
     const navigate = useNavigate();
 
     return (
         <>
-            <div class="journal-link" onClick={() => {navigate("/journal/" + props.entryLink)}}>
+            <div class="journal-link" onClick={() => {navigate("/journal/" + rkey)}}>
                 <div class="horizontal-div">
-                    <h4>Read time: {props.readTime}</h4>
-                    <h4>{props.releaseDate}</h4>
+                    <h4>{entry.value.createdAt}</h4>
                 </div>
-                <h2>{props.entryTitle}</h2>
-                <h3>{props.entryDescription}</h3>
+                <h2>{entry.value.title}</h2>
+                <h3>{entry.value.content.split(' ').slice(0,16).join(' ')}...</h3>
             </div>
         </>
     );

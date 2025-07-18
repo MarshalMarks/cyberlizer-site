@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import JournaLink from "../components/JournalLink";
+import JournalLink from "../components/JournalLink";
+import { useEffect, useState } from "react";
+import JournalEntry from "./JournalEntry";
 
 function Journal() {
+    const [entries, setEntries] = useState(null);
     const navigate = useNavigate();
 
     const dummyProps1 = {
@@ -20,6 +23,23 @@ function Journal() {
         entryLink: "entry-file-title-1"
     }
 
+    useEffect(() => {
+        const fetchEntry = async () => {
+            try {
+                const repoDid = "did:plc:psca2btmhyqh5cpnjs4rszpa";
+                const collection = "com.whtwnd.blog.entry";
+                const url = `https://bsky.social/xrpc/com.atproto.repo.listRecords?repo=${repoDid}&collection=${collection}`;
+                const res = await fetch(url);
+                const data = await res.json();
+                setEntries(data.records);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        fetchEntry();
+    }, []);
+
     return (
         <>
             <button class="home-button" onClick={() => {navigate("/")}}>Return home</button>
@@ -27,8 +47,9 @@ function Journal() {
                 <div id="journal-page-section" class="box-section">
                     <h1>Journal</h1>
                     <div id="journal-link-container">
-                        <JournaLink props={dummyProps1} />
-                        <JournaLink props={dummyProps2} />
+                        {!entries ? <h2>Loading...</h2> : entries.map(entry => (
+                            <JournalLink key={entry.cid} rkey={entry.uri.split("/")[4]} entry={entry}/>
+                        ))}
                     </div>
                 </div>
             </div>

@@ -1,46 +1,53 @@
 import ReactMarkdown from "react-markdown";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import remarkGfm from 'https://esm.sh/remark-gfm@4?bundle'
 
 function JournalEntry() {
-    const [markdownContent, setMarkdownContent] = useState("");
+    const [entry, setEntry] = useState(null);
     const navigate = useNavigate();
-    const { id } = useParams();
-
-    const markdownContext = require.context('../journal_entries', false, /\.md$/);
+    const params = useParams();
     
     useEffect(() => {
-        const fetchMarkdown = async () => {
-            const path = `./${id}.md`;
-            const content = markdownContext(path);
-            const text = typeof content === 'string' ? content : content.default;
-            setMarkdownContent(text);
+        const fetchEntry = async () => {
+            try {
+                const repoDid = "did:plc:psca2btmhyqh5cpnjs4rszpa";
+                const collection = "com.whtwnd.blog.entry";
+                const url = `https://bsky.social/xrpc/com.atproto.repo.getRecord?repo=${repoDid}&collection=${collection}&rkey=${params.rkey}`;
+                const res = await fetch(url);
+                const data = await res.json();
+                console.log(data);
+                setEntry(data);
+            } catch (err) {
+                console.error(err);
+            }
         };
 
-        fetchMarkdown();
-    }, [id, markdownContext])
-
-    const entryInfo = {
-        readTime: "15 minutes",
-        releaseDate: "January 15, 2025",
-        entryTitle: "Simple entry title",
-        entryDescription: "This is a simple description for this journal entry.",
-        entryLink: "entry-file-title-1"
-    }
+        fetchEntry();
+    }, []);
 
     return (
         <>
             <button class="home-button" onClick={() => {navigate("/journal")}}>Return to journal</button>
             <div class="grid">
                 <div id="entry-section" class="box-section">
-                    <div id="entry-header">
-                        <h1>{entryInfo.entryTitle}</h1>
-                        <h2>{entryInfo.entryDescription}</h2>
-                        <p>{entryInfo.releaseDate}</p>
-                    </div>
-                    <div id="markdown-section">
-                        {markdownContent ? <ReactMarkdown>{markdownContent}</ReactMarkdown> : <p>ERROR: couldn't fetch this page :(</p>}
-                    </div>
+                {entry ?
+                    <>
+                        <div id="entry-header">
+                            <h1>{entry.value.title}</h1>
+                            <p>Posted on {new Date(entry.value.createdAt).toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                                hour: 'numeric',
+                                minute: '2-digit'
+                            })}</p>
+                        </div>
+                        <div id="markdown-section">
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{entry.value.content}</ReactMarkdown>
+                        </div>
+                    </>
+                : <p>ERROR: couldn't fetch this page :(</p>}
                 </div>
             </div>
         </>
