@@ -13,7 +13,7 @@ function Home({ entries }) {
                 <div id="about-section" class="box-section">
                     <h2>About Me</h2>
                     <div id="about-text-container">
-                        <p>Hi! My name is <b>Clay Marks</b>.</p>
+                        <p>Hi! My name is <b>Clay</b>.</p>
                         <p>I'm a 22-year-old programmer from Texas trying to orient myself in a mercurial world.</p>
                         <p>I love electronic music (Aphex Twin, Porter Robinson, underscores, Iglooghost) and automation/puzzle games (Minecraft Create, Oxygen Not Included, Factorio, Zachtronics games, Portal).</p>
                     </div>
