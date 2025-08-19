@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MiniJournalLink from "../components/MiniJournalLink";
 import MiniBookLink from "../components/MiniBookLink";
 
