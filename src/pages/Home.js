@@ -47,7 +47,7 @@ function Home({ entries, books }) {
                             <MiniBookLink key={book.value.hiveId} book={book}/>
                         ))}
                     </div>
-                    <a href="https://bookhive.buzz/profile/cyberlizer.net" class="link-button-wrapper"><button>See reading list</button></a>
+                    <a href="https://bookhive.buzz/profile/cyberlizer.net" class="link-button-wrapper" target="_blank" rel="noopener noreferrer"><button>See reading list</button></a>
                 </div>
             </div>
         </>
