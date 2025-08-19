@@ -26,7 +26,7 @@ p {
   font-size: calc(0.5vw + 14px);
 }
 
-a {
+a:not(.link-button-wrapper) {
   font-size: 22px;
   display: block;
   color: #000;
@@ -41,7 +41,7 @@ a {
   transition: 0.1s;
 }
 
-a:hover {
+a:hover:not(.link-button-wrapper) {
   background-position: bottom 0px left -130px;
   border-bottom: 2px solid #000;
   background-color: #eee;
@@ -198,6 +198,12 @@ img {
 
 .mini-journal-link h2 {
   text-align: left;
+  font-size: 1.5rem;
+}
+
+.mini-journal-link h4 {
+  text-align: left;
+  font-size: 1rem;
 }
 
 .mini-journal-link:hover {
@@ -207,6 +213,46 @@ img {
   padding-left: 3rem;
   cursor: pointer;
   transition: 0.2s;
+}
+
+.mini-book-link {
+  background: #fff;
+  padding: 0rem 1rem 0rem 1rem;
+  border-bottom: 2px dashed #000;
+  background-image: url("/src/resources/redwedge.png");
+  background-repeat: no-repeat;
+  background-position: bottom 0px left -200px;
+  transition: 0.1s;
+}
+
+.mini-book-link h2 {
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.mini-book-link h4 {
+  text-align: left;
+  font-size: 1rem;
+}
+
+.mini-book-link:hover {
+  background-color: #eee;
+  border-bottom: 2px solid #000;
+  background-position: bottom 0px left -110px;
+  padding-left: 3rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.link-button-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+}
+
+.link-button-wrapper button {
+  width: 100%;
 }
 
 #projects-section {

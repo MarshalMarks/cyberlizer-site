@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MiniJournalLink from "../components/MiniJournalLink";
+import MiniBookLink from "../components/MiniBookLink";
 
-function Home({ entries }) {
+function Home({ entries, books }) {
     const navigate = useNavigate();
 
     return (
@@ -40,9 +41,13 @@ function Home({ entries }) {
                     <button onClick={() => { navigate("/journal") }}>See all entries</button>
                 </div>
                 <div id="projects-section" class="box-section">
-                    <h2>Projects</h2>
-                    <p>(Under construction)</p>
-                    <button onClick={() => { navigate("/projects") }}>See all projects</button>
+                    <h2>Recently Read</h2>
+                    <div id="mini-journal-container">
+                        {!books ? <h2>Loading...</h2> : books.filter(book => book.value.status === "buzz.bookhive.defs#finished").map(book => (
+                            <MiniBookLink key={book.value.hiveId} book={book}/>
+                        ))}
+                    </div>
+                    <a href="https://bookhive.buzz/profile/cyberlizer.net" class="link-button-wrapper"><button>See reading list</button></a>
                 </div>
             </div>
         </>
